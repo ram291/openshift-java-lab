@@ -15,9 +15,12 @@ public class HelloApp {
     @Value("${secret.username:No-Secret}")
     private String secretUser;
 
+    @Value("${secret.password:No-Password}")
+    private String password;
+
     @GetMapping("/hello")
     public String hello() {
-        return "ConfigMap message: " + message + " | Secret user: " + secretUser;
+        return "ConfigMap message: " + message + " | Secret user: " + secretUser + " | Secret password: " + password;
     }
 
     public static void main(String[] args) {
